@@ -1,0 +1,198 @@
+body {
+  height: auto;
+}
+.page {
+  padding: 16px 16px 120px 16px;
+}
+
+.section-container {
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.section-container-detail {
+  padding: 16px 16px 120px 16px;
+  background: #ffffff;
+}
+.zaui-list-item {
+  cursor: pointer;
+}
+.web-title {
+  padding: 0px 16px 0 16px;
+  font-size: 24px;
+  background-color: white;
+  color: rgb(9, 89, 163);
+  font-weight: 600;
+}
+
+.hidden-img {
+  overflow: hidden;
+}
+
+.custom-scrollbars__content {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* --------------------------------------------Custom thanh scroll bar ----------------------------------------------- */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(231, 229, 229, 0.3);
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background: #414cec;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #ffffff;
+}
+
+/* --------------------------------------------Custom thanh scroll bar - END ------------------------------------------- */
+
+.img-icon img {
+  width: 60%;
+  margin: auto;
+}
+.a-custom {
+  text-align: center;
+  color: blue;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.text-title {
+  font-size: 22px;
+  color: #0959a3;
+}
+
+.icon {
+  display: inline;
+  font-size: 18px;
+}
+
+img.custom-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+a.border-card-bottom {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.card-item {
+  border-radius: 8px;
+  overflow: hidden;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border: 1px solid #efefef;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+/* CSS */
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.zaui-page.page {
+  background-color: white;
+}
+
+.page-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.br-white {
+  background-color: white;
+}
+.li-custom {
+  color: #525252;
+}
+.box-shadow-custom {
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3em;
+}
+
+.title-home-custom {
+  color: blue;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.title-home-custom-r {
+  color: rgb(41, 41, 233);
+  font-size: 16px;
+  cursor: pointer;
+  text-align: end;
+}
+
+.title-detail {
+  text-align: initial;
+  color: blue;
+  font-weight: 600;
+}
+
+.content-detail {
+  line-height: 26px;
+  margin-top: 20px;
+}
+.slide-img {
+  max-height: 270px;
+}
+
+img.slide-img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.relative.inline-block.align-bottom {
+  width: 100%;
+}
+
+.container_info .zaui-box{
+  padding: 6px;
+  height: 60px;
+  background-color: #1843ef;
+  color: white;
+  border-bottom: 1px solid #1843ef;
+  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 17px;
+}
+.container_info{
+  background-color: white;
+  
+}
+.icon-back{
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+p.title_topbar {
+  margin-top: 13px;
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 10px;
+}

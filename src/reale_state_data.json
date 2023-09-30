@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "Khu dân cư Hồng Loan",
+      "type": "Căn hộ chung cư",
+      "price": 1500000000,
+      "location": "Hưng Thạnh, Cái Răng, Cần Thơ",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 80,
+      "description": "Căn hộ sang trọng tại trung tâm thành phố, gần các tiện ích và trường học.",
+      "image": "https://namphuoc.net/wp-content/uploads/2021/01/hinh-anh-thuc-te-kdc-hong-loan.jpg",
+      "images": [
+        "https://namphuoc.net/wp-content/uploads/2021/01/hinh-anh-thuc-te-kdc-hong-loan.jpg",
+        "https://media.sosanhnha.com/batdongsan/2023/09/13/1694539484-pictureyxopf.jpg",
+        "https://khoanamland.vn/wp-content/uploads/2021/12/du-an-khu-dan-cu-hong-loan-lo-6a-6b-5c-5b-cai-rang-can-tho-khoanamland-26-scaled.jpg?v=1663954275"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Khu dân cư Hoàng Quân",
+      "type": "Nhà phố liền kề",
+      "price": 2500000000,
+      "location": "456 Đường DEF, Quận UVW, Thành phố Hanoi",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 120,
+      "description": "Nhà phố mới xây, có sân vườn rộng rãi, thích hợp cho gia đình lớn.",
+      "image": "https://canthoplus.com/wp-content/uploads/2020/01/mua-dat-quan-cai-rang-can-tho.jpg",
+      "images": [
+        "https://namphuoc.net/wp-content/uploads/2021/01/hinh-anh-thuc-te-kdc-hong-loan.jpg",
+        "https://media.sosanhnha.com/batdongsan/2023/09/13/1694539484-pictureyxopf.jpg",
+        "https://khoanamland.vn/wp-content/uploads/2021/12/du-an-khu-dan-cu-hong-loan-lo-6a-6b-5c-5b-cai-rang-can-tho-khoanamland-26-scaled.jpg?v=1663954275"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Khu dân cư 91B",
+      "type": "Biệt thự",
+      "price": 5000000000,
+      "location": "789 Đường GHI, Quận JKL, Thành phố Da Nang",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "area": 300,
+      "description": "Biệt thự cao cấp với hồ bơi riêng và khu vườn đẹp, view biển tuyệt đẹp.",
+      "image": "https://s1.odt.vn/uploads/11-2020/46/galleries/khu-do-thi-moi-hung-phu-can-tho-16052660910.jpg",
+      "images": [
+        "https://namphuoc.net/wp-content/uploads/2021/01/hinh-anh-thuc-te-kdc-hong-loan.jpg",
+        "https://media.sosanhnha.com/batdongsan/2023/09/13/1694539484-pictureyxopf.jpg",
+        "https://khoanamland.vn/wp-content/uploads/2021/12/du-an-khu-dan-cu-hong-loan-lo-6a-6b-5c-5b-cai-rang-can-tho-khoanamland-26-scaled.jpg?v=1663954275"
+      ]
+    }
+  ]
+}
