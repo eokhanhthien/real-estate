@@ -181,6 +181,11 @@ img.slide-img {
   border-bottom-right-radius: 17px;
   border-bottom-left-radius: 17px;
 }
+
+.radius-none{
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
 .container_info{
   background-color: white;
   
@@ -195,4 +200,67 @@ p.title_topbar {
   font-size: 17px;
   font-weight: 700;
   margin-left: 10px;
+}
+.button-book {
+  position: sticky;
+  bottom: 0%;
+  width: 100%;
+}
+
+.button-cre-de{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.number-cre-de {
+  padding: 7px 30px;
+  font-size: 32px;
+  font-weight: 600;
+}
+.img-chat{
+  width: 36px;
+  cursor: pointer;
+}
+.buttton-create-book {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  cursor: pointer;
+}
+.icon-book {
+  display: inline;
+  font-size: 14px;
+  float: right;
+  margin-top: 4px;
+}
+p.title-book {
+  color: green;
+  margin: 20px 0 4px 0;
+}
+.hour{
+  box-shadow: rgb(0 0 0 / 10%) 0px 0px 5px 0px, rgb(0 0 0 / 10%) 0px 0px 1px 0px;
+  padding: 8px 0;
+}
+
+.button-continue {
+  position: sticky;
+  bottom: 0px;
+  height: 38px;
+  background-color: #1d4dff;
+  width: 100%;
+  left: 18px;
+  margin-top: 12px;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+}
+img.img-book {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.titlebook{
+  font-weight: 500;
 }

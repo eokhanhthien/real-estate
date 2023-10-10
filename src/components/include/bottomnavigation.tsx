@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Icon, useNavigate, BottomNavigation, Sheet } from "zmp-ui";
 import { ToastContainer, toast } from "react-toastify";
+import { openPhone,openChat } from "zmp-sdk/apis";
 
 const Bottomnavigation: React.FunctionComponent = (props) => {
   const navigate = useNavigate();
@@ -20,9 +21,27 @@ const Bottomnavigation: React.FunctionComponent = (props) => {
   }, [location.pathname]);
 
   const handleCallButtonClick = () => {
-    // Sử dụng window.location.href để thay đổi URL sang URI tel:
-    window.location.href = "tel:0946144333";
+    openPhone({
+      phoneNumber: "+840946144333",
+      success: () => {
+        // xử lý khi gọi api thành công
+      },
+      fail: (error) => {
+        // xử lý khi gọi api thất bại
+        console.log(error);
+      }
+    });
   };
+
+  const handleOpenMess = ()=>{
+    openChat({
+      type: 'oa',
+      id: '510684095664027849',
+      message: 'Xin Chào'
+      // success: () => {},
+      // fail: (err) => {}
+    });
+  }
   const notify = () => toast.info("Tính năng đang phát triển");
   return (
     <>
@@ -36,7 +55,7 @@ const Bottomnavigation: React.FunctionComponent = (props) => {
           label="Tin Nhắn"
           icon={<Icon icon="zi-chat" />}
           activeIcon={<Icon icon="zi-chat-solid" />}
-          onClick={() => notify()}
+          onClick={() => handleOpenMess()}
         />
         <BottomNavigation.Item
           label="Gọi ngay"

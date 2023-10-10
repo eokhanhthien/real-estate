@@ -23,6 +23,7 @@ import img_about from "/public/images/about.png";
 import img_information from "/public/images/personal-information.png";
 import phone_call from "/public/images/phone-call.png";
 import breaking_news from "/public/images/breaking-news.png";
+import zalo_chat from "/public/images/zalo-chat.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -35,6 +36,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
 
+import { openPhone,openChat } from "zmp-sdk/apis";
+import { requestSendNotification } from "zmp-sdk/apis";
+
 const HomePage: React.FunctionComponent = () => {
   const user = useRecoilValue(userState);
   const navigate = useNavigate();
@@ -44,16 +48,89 @@ const HomePage: React.FunctionComponent = () => {
   const [listData, setListData] = useState([]);
 
   useEffect(() => {
-    getDate();
+    getData();
   }, []);
 
-  const getDate = async () => {
+  const getData = async () => {
     const reps = await axios({
       method: "get",
       url: "http://localhost:8069/get-all-real-estate",
     });
+    
     setListData(reps?.data?.content || []);
   };
+
+  // const sendNotification = async () => {
+  //   const apiUrl = 'https://openapi.mini.zalo.me/notification/template';
+  
+  //   const headers = {
+  //     'X-Api-Key': 'Bearer yApv0T1nsntvkl81rd3L1Fwr_1dLTTu6_h7u530Pyn0hq6VG7G',
+  //     'X-User-Id': '1229623464742690989',
+  //     'X-MiniApp-Id': '277868317912768684',
+  //     'Content-Type': 'application/json',
+  //   };
+  
+  //   const requestData = {
+  //     templateId: '00126fd75392bacce383',
+  //     templateData: {
+  //       buttonText: 'Xem chi tiết đơn hàng',
+  //       buttonUrl: 'https://zalo.me/s/194839900003483517/',
+  //       title: 'ZaUI Coffee - Xác nhận đơn hàng',
+  //       contentTitle: 'Xác nhận đơn hàng',
+  //       contentDescription: 'Chúng tôi đã nhận yêu cầu đặt hàng từ bạn. Thông tin chi tiết đơn hàng',
+  //     },
+  //   };
+  
+  //   try {
+  //     const response = await axios.post(apiUrl, requestData, { headers });
+  //     console.log('Response:', response.data);
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //   }
+  // };
+
+  const handleCallButtonClick = () => {
+    openPhone({
+      phoneNumber: "+840946144333",
+      success: () => {
+        // xử lý khi gọi api thành công
+      },
+      fail: (error) => {
+        // xử lý khi gọi api thất bại
+        console.log(error);
+      }
+    });
+
+
+    // ------------------- test gửi thông báo -----------------------------
+    // requestSendNotification({
+    //   success: async () => {
+    //     console.log("123")
+    //     // sendNotification();
+    //     // const reps = await axios({
+    //     //   method: "get",
+    //     //   url: "http://127.0.0.1:8000/api/get-index",
+    //     // });
+    //     // console.log(reps)
+    //   },
+    //   fail: (error) => {
+    //     // xử lý khi gọi api thất bại
+    //     console.log(error);
+    //   }
+    // });
+
+  };
+
+  
+  const handleOpenMess = ()=>{
+    openChat({
+      type: 'oa',
+      id: '510684095664027849',
+      message: 'Xin Chào'
+      // success: () => {},
+      // fail: (err) => {}
+    });
+  }
 
   return (
     <>
@@ -90,7 +167,10 @@ const HomePage: React.FunctionComponent = () => {
               <div className="mt-3 text-sm">Tất cả dự án</div>
             </div>
 
-            <div className="col-span-1 a-custom" onClick={notify}>
+            <div className="col-span-1 a-custom" 
+            // onClick={notify}
+            onClick={() => navigate("/book")}
+            >
               <div className="img-icon">
                 <img src={img_timetAble} />
               </div>
@@ -98,12 +178,17 @@ const HomePage: React.FunctionComponent = () => {
             </div>
 
             <div className="col-span-1 a-custom">
-              <a href="tel:0946144333">
-                <div className="img-icon">
+                <div className="img-icon"  onClick={() => handleCallButtonClick()}>
                   <img src={phone_call} />
                 </div>
-                <div className="mt-3 text-sm"> Gọi ngay</div>{" "}
-              </a>
+                <div className="mt-3 text-sm"> Gọi ngay</div>{" "}      
+            </div>
+
+            <div className="col-span-1 a-custom">
+                <div className="img-icon"  onClick={() => handleOpenMess()}>
+                  <img src={zalo_chat} />
+                </div>
+                <div className="mt-3 text-sm"> Nhắn tin</div>{" "}      
             </div>
 
             <div

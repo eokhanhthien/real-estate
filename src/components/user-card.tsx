@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { GetUserInfoReturns } from "zmp-sdk";
-import { Avatar, Box, Text,Button,useNavigate } from "zmp-ui";
+import { Avatar, Box, Text,Button } from "zmp-ui";
+import { useNavigate } from 'react-router-dom';
 
 interface UserProps {
   user: GetUserInfoReturns["userInfo"];
@@ -23,42 +24,66 @@ const UserCard: React.FunctionComponent<UserProps> = ({ user }) => {
   const currentPath = location.pathname;
 
   useEffect(() => {
+    const elements = document.querySelector('.container_info .zaui-box');
 
     if (currentPath == "/") {
       setActiveTab(true);
       setTitle('')
+      elements.classList.remove("radius-none");
     }else if(currentPath == "/view-real-estate"){
       setTitle('Dự án')
       setActiveTab(false);
+      elements.classList.remove("radius-none");
     }else if (currentPath.includes("/detail-real-estate/")) {
       // Có ít nhất một ký tự sau "/detail-real-estate/"
       setTitle('Chi tiết');
       setActiveTab(false);    
+      elements.classList.remove("radius-none");
     }
     else if(currentPath == "/user"){
       setTitle('Thông tin')
       setActiveTab(false);
+      elements.classList.remove("radius-none");
     }
     else if(currentPath == "/news"){
       setTitle('Tin tức')
       setActiveTab(false);
+      elements.classList.remove("radius-none");
     }else if(currentPath == "/about"){
       setTitle('Về chúng tôi')
       setActiveTab(false);
+      elements.classList.remove("radius-none");
     }else if(currentPath == "/category-real-estate"){
       setTitle('Tất cả dự án')
       setActiveTab(false);
+      elements.classList.remove("radius-none");
+    }else if(currentPath == "/book"){
+      setTitle('Đặt lịch')
+      setActiveTab(false);
+      elements.classList.remove("radius-none");
+    }else if(currentPath == "/create-book"){
+      setTitle('Tạo lịch hẹn')
+      setActiveTab(false);
+      elements.classList.add("radius-none");
+    }else if(currentPath == "/choose-estate"){
+      setTitle('Chọn dự án')
+      setActiveTab(false);
+      elements.classList.add("radius-none");
+    }else if(currentPath == "/info-book"){
+      setTitle('Thông tin người đặt')
+      setActiveTab(false);
+      elements.classList.add("radius-none");
     }
     else {
       setActiveTab(false);
     }
     
-  }, [currentPath]);
+  }, [location]);
 
 
   // Bây giờ bạn có thể sử dụng currentPath trong component của bạn
   // Ví dụ: in ra đường dẫn hiện tại
-  console.log("Đường dẫn hiện tại:", currentPath);
+
 
   return (
     <Box flex>

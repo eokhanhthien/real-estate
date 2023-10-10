@@ -6,7 +6,7 @@ import {
   AiFillWechat,
   AiOutlineCheck,
 } from "react-icons/ai";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import reale_state_data from "../reale_state_data.json";
 import axios from "axios";
 import {
@@ -22,6 +22,7 @@ import {
 const detail: React.FunctionComponent = (props) => {
   let { id } = useParams();
   // const convert = parseInt(id,10);
+  const navigate = useNavigate();
 
   const [data, setData] = useState<any>(null);
 
@@ -62,7 +63,7 @@ const detail: React.FunctionComponent = (props) => {
             />
           </Swiper.Slide>
           
-          <Swiper.Slide>
+          {/* <Swiper.Slide>
             <img
               className="slide-img"
               src="https://prohome.com.vn/wp-content/uploads/2022/08/cho-thue-nha-nguyen-can-can-tho-moi-100-kdc-hong-loan-cai-rang-8.jpg"
@@ -75,15 +76,15 @@ const detail: React.FunctionComponent = (props) => {
               src="https://prohome.com.vn/wp-content/uploads/2022/08/cho-thue-nha-nguyen-can-can-tho-moi-100-kdc-hong-loan-cai-rang-7.jpg"
               alt="slide-2"
             />
-          </Swiper.Slide>
+          </Swiper.Slide> */}
 
         </Swiper>
       </div>
       <div className="section-container-detail">
         <div className="">
           <strong className="page-title ">{listData?.name || ""}</strong>
-          <p className="card-text font-normal text-green-700 dark:text-green-400">
-            {listData?.price && listData.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+          <p className="mt-4 font-normal text-green-700 dark:text-green-400">
+            <strong>{listData?.price && listData.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </strong>
           </p>
           <div className="grid grid-cols-2 gap-4 mt-5 text-center">
             <div className="col-span-1">
@@ -98,7 +99,8 @@ const detail: React.FunctionComponent = (props) => {
               <TERipple rippleColor="white">
                 <button
                   className="bg-yellow-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 border border-yellow-500 rounded w-full"
-                  onClick={() => setShowModal(true)}
+                  // onClick={() => setShowModal(true)}
+                  onClick={() => navigate("/book")}
                 >
                   <AiTwotoneCalendar className="icon" /> Đặt lịch
                 </button>
